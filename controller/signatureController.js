@@ -1,7 +1,12 @@
+const fs = require('fs');
 const Web3 = require('web3');
 const ethereumJsUtil = require('ethereumjs-util');
 const { getDefaultAccount, setDefaultAccount } = require('../utils/accouns');
 const BSC_TESTNET_HTTP_PROVIDER = "https://data-seed-prebsc-1-s1.binance.org:8545/";
+
+//config data
+let rawdata = fs.readFileSync('./config/config.json');
+let config = JSON.parse(rawdata);
 
 //constants
 const RESPONSE_STATUS_SUCCESS = "success";
@@ -16,8 +21,8 @@ let postGetSignature = async function(req, res) {
 
     if (amount && nonce && timestamp) {
         //this private key is only used for testing -- wallet address: 0x0bC3c9A6955eA07833Dc627c2E1E5bcb62366531
-        const PRIVATE_KEY = 'e0f3440344e4814d0dea8a65c1b9c488bab4295571c72fb879f5c29c8c861937';
-        await setDefaultAccount(web3, PRIVATE_KEY);
+        const privateKey = config.PRIVATE_KEY;
+        await setDefaultAccount(web3, privateKey);
 
         let message = amount + nonce + timestamp;
 
