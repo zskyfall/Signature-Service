@@ -1,5 +1,5 @@
 var express = require('express');
-const { postGetSignature, postRecoverSigner } = require('../controller/SignatureController');
+const { postGetSignature, postRecoverSigner, postSignPayment, postVerifySignature } = require('../controller/SignatureController');
 var router = express.Router();
 
 /* GET home page. */
@@ -10,5 +10,9 @@ router.get('/', function(req, res, next) {
 router.post('/get-signature', postGetSignature);
 
 router.post('/recover-signer', postRecoverSigner);
+
+router.post('/verify-signature', postVerifySignature);
+
+router.post('/sign-payment', postSignPayment);
 
 module.exports = router;
