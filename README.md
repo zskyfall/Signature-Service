@@ -5,7 +5,7 @@
 ## Endpoints
 
 ### 1. Sign Payment:
-Returns the Returns signature and associated information such as: message, message hash, v, r, s.
+Returns the signature and associated information such as: message, message hash, v, r, s.
 
 ```
 POST: /sign-payment
@@ -88,6 +88,12 @@ Demo request:
 
         "message": "hihihoho0x8120a42d00609af16d087d877e3bb3157702e6569ef27b35d04839601bb0fcc0",
         "signature": "0x50d15e8d43c3fe62c2560b654cd2afa3aa6369f7dff51c88f788766a00ddf89a4e871544dc8af947ce09697ac2208f71189cddaa7a443c334ebb4e866cb4abb11b"
+}
+
+Response:
+{
+    "status": "success",
+    "isVerified": true
 }
 
 ```
