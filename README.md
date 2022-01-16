@@ -5,7 +5,7 @@
 ## Endpoints
 
 ### 1. Sign Payment:
-Returns the Returns signature and associated information such as: message, message hash, v, r, s.
+Returns the signature and associated information such as: message, message hash, v, r, s.
 
 ```
 POST: /sign-payment
