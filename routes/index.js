@@ -1,5 +1,5 @@
 var express = require('express');
-const { postGetSignature, postRecoverSigner, postSignPayment, postVerifySignature } = require('../controller/SignatureController');
+const { postGetSignature, postRecoverSigner, postSignPayment, postVerifySignature, getTransaction } = require('../controller/SignatureController');
 var router = express.Router();
 
 /* GET home page. */
